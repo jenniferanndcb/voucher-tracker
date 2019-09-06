@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end 
 
   post '/signup' do 
-    
+    raise params.inspect 
   end 
 
 end 
