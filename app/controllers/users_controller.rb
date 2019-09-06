@@ -8,8 +8,19 @@ class UsersController < ApplicationController
     erb :'users/new'
   end 
 
-  post '/signup' do 
-    raise params.inspect 
+  post '/login' do 
+    login(params[:email], params[:password])
+    redirect '/vouchers'
   end 
+  
+  post '/signup' do 
+    @user = User.create(email: params[:email], first_name: params[:first_name], password: params[:password])
+
+    redirect '/vouchers'
+  end 
+
+  get '/logout' do 
+    logout! 
+  end
 
 end 

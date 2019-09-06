@@ -13,4 +13,24 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  helpers do 
+    def logged_in? 
+      !!session[:user_id]
+    end 
+
+    def login(email,password)
+    user = User.find_by(:email => email)
+      if user && user.authenticate(password)
+        session[:email] = user.email 
+      else 
+        redirect '/login'
+      end 
+    end
+
+    def logout! 
+      session.clear 
+      redirect '/login'
+    end 
+  end 
+
 end

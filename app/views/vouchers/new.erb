@@ -1,0 +1,24 @@
+
+<h3>Save your new discount voucher code</h3>
+<br><br>
+
+<form action='/vouchers' method='post'>
+
+<label for='store_name'>Store Name:</label>
+  <input type='text' name='store_name' size='50'>
+<br><br>
+<label for='code'>Voucher or discount code:</label>
+  <input type='text' name='code' size='50'>
+<br><br>
+<label for='savings'>Savings amount £ or %:</label>
+  <select id='savings'>
+    <option value='GBP'>GBP</option>
+    <option value='percentage'>%</option>
+  </select>
+  <input type='number' name='savings'>
+<br><br>
+<label for='expirydate'>Expiry Date:<label>
+  <input type='date' name='exp_date'>
+<br><br>
+<input type='submit' value='Save'>
+</form>
