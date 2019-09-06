@@ -1,4 +1,4 @@
-lass User < ActiveRecord::Base 
+class User < ActiveRecord::Base 
   has_secure_password
   validates_presence_of :email, :password 
   has_many :vouchers 
