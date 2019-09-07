@@ -1,0 +1,25 @@
+<h3>Edit your Voucher</h3>
+
+<form action="/vouchers/<%=@voucher.id%>/edit" method='post'>
+<input type='hidden' name='_method' value='patch'>
+<input type='hidden' name='id' value='<%=id%>'>
+
+<label for='store_name'>Store Name:</label>
+  <input type='text' name='store_name' value='<%=@voucher.store_name%>'>
+<br><br>
+<label for='code'>Voucher or discount code:</label>
+  <input type='text' name='code' value='<%=@voucher.code%>'>
+<br><br>
+<label for='savings'>Savings amount £ or %:</label>
+  <select id='savings'>
+    <option value='GBP'>GBP</option>
+    <option value='percentage'>%</option>
+  </select>
+  <input type='number' name='savings' value='<%=@voucher.savings%>'>
+<br><br>
+<label for='expirydate'>Expiry Date:<label>
+  <input type='date' name='exp_date' value='<%=@voucher.exp_date%>'>
+<br><br>
+  <input type='submit' value='Update'>
+
+</form>

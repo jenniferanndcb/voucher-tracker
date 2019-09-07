@@ -1,9 +1,10 @@
 <h3>Welcome back <%=@user.first_name%>, here are all your saved discount voucher codes:</h3>
-<br><br>
+<br>
 <%@user_vouchers.each do |voucher|%>
 <h3>Store Name: <%=voucher.store_name%></li></h3>
   <li>Voucher Code: <%=voucher.code%></li>
   <li>Expiry Date: <%=voucher.exp_date%></li>
+  <a href='/vouchers/<%=voucher.id%>/edit'>Edit</a>
 <%end%>
 
 <br><br>
