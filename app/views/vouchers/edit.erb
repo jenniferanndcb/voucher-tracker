@@ -11,9 +11,9 @@
   <input type='text' name='code' value='<%=@voucher.code%>'>
 <br><br>
 <label for='savings'>Savings amount £ or %:</label>
-  <select id='savings'>
+  <select name='options' value='<%=@voucher.options%>%'>
     <option value='GBP'>GBP</option>
-    <option value='percentage'>%</option>
+    <option value='%'>%</option>
   </select>
   <input type='number' name='savings' value='<%=@voucher.savings%>'>
 <br><br>

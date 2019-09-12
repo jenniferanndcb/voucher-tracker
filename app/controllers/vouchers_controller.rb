@@ -2,11 +2,6 @@ class VouchersController < ApplicationController
 
   get '/vouchers' do 
     @user = User.find(session[:user_id])
-    # @user_vouchers = []
-
-    # Voucher.all.each do |voucher|
-    #   @user_vouchers << voucher 
-    
 
     erb :'vouchers/index'
     
@@ -18,8 +13,9 @@ class VouchersController < ApplicationController
 
   post '/vouchers' do 
     if logged_in?
-      @vouchers = Voucher.create(store_name: params[:store_name],code: params[:code],savings: params[:savings],exp_date: params[:exp_date],user_id: current_user.id)
-    redirect '/vouchers'
+      @vouchers = Voucher.create(store_name: params[:store_name],code: params[:code],savings: params[:savings],options: params[:options], exp_date: params[:exp_date],user_id: current_user.id)
+     
+      redirect '/vouchers'
     else
       redirect '/login'
     end
@@ -43,12 +39,13 @@ class VouchersController < ApplicationController
     erb :'/vouchers/edit' 
   end 
 
-  patch '/vouchers/:id' do 
+  patch '/vouchers/:id/edit' do 
     @voucher = Voucher.find(params[:id])
     @voucher.store_name = params[:store_name]
     @voucher.code = params[:code]
     @voucher.savings = params[:savings]
     @voucher.exp_date = params[:exp_date]
+    @voucher.options = params[:options]
     @voucher.save 
     redirect "/vouchers/#{@voucher.id}"
   end 
