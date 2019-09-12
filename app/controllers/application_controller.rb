@@ -10,12 +10,20 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    if logged_in? 
+      redirect '/vouchers'
+    else 
     erb :index
+    end 
   end
 
   helpers do 
     def logged_in? 
       !!session[:user_id]
+    end 
+
+    def current_user
+      User.find(session[:user_id])
     end 
 
     def login(email,password)

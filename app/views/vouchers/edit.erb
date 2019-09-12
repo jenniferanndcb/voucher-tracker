@@ -2,7 +2,7 @@
 
 <form action="/vouchers/<%=@voucher.id%>/edit" method='post'>
 <input type='hidden' name='_method' value='patch'>
-<input type='hidden' name='id' value='<%=id%>'>
+<input type='hidden' name='id' value='<%=@voucher.id%>'>
 
 <label for='store_name'>Store Name:</label>
   <input type='text' name='store_name' value='<%=@voucher.store_name%>'>

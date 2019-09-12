@@ -9,8 +9,11 @@ class UsersController < ApplicationController
   end 
 
   post '/login' do 
-    login(params[:email], params[:password])
-    redirect '/vouchers'
+    if login(params[:email], params[:password])
+      redirect '/vouchers'
+    else 
+      redirect '/login'
+    end 
   end 
   
   post '/signup' do 
