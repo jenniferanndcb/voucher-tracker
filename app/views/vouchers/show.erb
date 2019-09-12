@@ -9,9 +9,7 @@ Expiry Date: <%=@voucher.exp_date%>
 <a href='/vouchers/<%=@voucher.id%>/edit'>Edit</a>
 <br><br>
 <form action='/vouchers/<%=@voucher.id%>/delete' method='post'> 
-  <%binding.pry%>
   <input type='hidden' name='_method' value='delete'>
   <input type='hidden' name='id' value='<%=@voucher.id%>'>
   <input type='submit' value='Delete'> 
-  
 </form> 
