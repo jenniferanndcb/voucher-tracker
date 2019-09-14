@@ -13,7 +13,8 @@ class VouchersController < ApplicationController
 
   post '/vouchers' do 
     if logged_in?
-      @vouchers = Voucher.create(store_name: params[:store_name],code: params[:code],savings: params[:savings],options: params[:options], exp_date: params[:exp_date],user_id: current_user.id)
+      @store = Store.create(store_name: params[:store_name], store_url: params[:store_url]) 
+      @store.vouchers << Voucher.create(code: params[:code],savings: params[:savings],options: params[:options], exp_date: params[:exp_date],user_id: current_user.id)
      
       redirect '/vouchers'
     else
