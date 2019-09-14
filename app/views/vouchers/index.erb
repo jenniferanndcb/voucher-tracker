@@ -3,7 +3,7 @@
 <br>
 <%@user.vouchers.each do |voucher|%>
 <a href='/vouchers/<%=voucher.id%>'><h3>Store Name: <%=voucher.store_name%></li></h3></a>
-  <li><%=@option%></li>
+  <li>Savings: <%=voucher.savings%><%=voucher.options%></li>
   <li>Voucher Code: <%=voucher.code%></li>
   <li>Expiry Date: <%=voucher.exp_date%></li>
 <%end%>
