@@ -2,7 +2,7 @@ class VouchersController < ApplicationController
 
   get '/vouchers' do 
     @user = User.find(session[:user_id])
-    
+    @stores = Store.all
 
     erb :'vouchers/index'
     
