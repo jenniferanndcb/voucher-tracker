@@ -2,8 +2,12 @@
 <h3>Here are all your saved discount voucher codes:</h3>
 <br>
 
+<a href='/vouchers/<%=@store.id%>'><h3><%=@store.store_name%><h3></a>
+<%binding.pry%>
 <%@user.vouchers.each do |voucher|%>
-<a href='/vouchers/<%=voucher.id%>'><h3><%=voucher.store_name%></li></h3></a>
+  
+    
+    
   <li>Savings: <%=voucher.savings%><%=voucher.options%></li>
   <li>Voucher Code: <strong><%=voucher.code%></strong></li>
   <li>Expiry Date: <%=voucher.exp_date%></li>

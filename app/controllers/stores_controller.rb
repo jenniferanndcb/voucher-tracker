@@ -1,7 +1,21 @@
 class StoreController < ApplicationController 
 
   get '/stores' do 
-    @store = Store.new(store_name: params[:store_name], store_url: params[:store_url]) 
+    @store = Store.all
+    erb :'/store/index'
+  end 
+
+  get '/store/new' do 
+    erb :'/store/new'
+  end 
+
+  get '/stores/:id' do 
+    if logged_in? 
+      @store = Store.find(params[:id])
+    else 
+      redirect to '/login'
+    end 
+    erb :'/stores/show'
   end 
 
 end 
