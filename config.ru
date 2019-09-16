@@ -8,4 +8,5 @@ use Rack::MethodOverride
 
 use UsersController 
 use VouchersController
+use StoresController
 run ApplicationController

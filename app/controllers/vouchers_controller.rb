@@ -14,7 +14,7 @@ class VouchersController < ApplicationController
 
   post '/vouchers' do 
     if logged_in?
-      @store = Store.create(store_name: params[:store_name], store_url: params[:store_url])
+      @store = Store.find_or_create_by(store_name: params[:store_name], store_url: params[:store_url])
         
       @store.vouchers << Voucher.create(code: params[:code],savings: params[:savings],options: params[:options], exp_date: params[:exp_date],user_id: current_user.id)
      

@@ -4,9 +4,8 @@ class User < ActiveRecord::Base
   validates_presence_of :password
   has_many :vouchers 
 
-  def list_user_vouchers 
-    self.vouchers.collect do |voucher| "#{voucher.code}" 
-    end 
+  def save_voucher(id)
+    current_user.vouchers << Voucher.find()
   end 
 
   

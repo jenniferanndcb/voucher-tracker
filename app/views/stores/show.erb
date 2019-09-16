@@ -1,0 +1,16 @@
+<h3><%=@store.store_name%></h3>
+
+<h4>Available voucher codes for this store:</h4>
+<br><br>
+<%@store.vouchers.each do |voucher|%>
+  <li>Voucher code: <strong><%=voucher.code%></strong></li>
+  <li>Savings: <%=voucher.savings%><%=voucher.options%></li>
+  <li>Expiry date: <%=voucher.exp_date%><li>
+  <%end%>
+<br>
+ <form action='/vouchers' method='post'>
+ <input type='submit' value='Save'>
+ </form> 
+
+
+  

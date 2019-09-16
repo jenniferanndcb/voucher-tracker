@@ -1,1 +1,8 @@
-<h2>
+<h3>Browse stores and save new codes</h3>
+
+<%@stores.each do |store|%>
+  <li><a href="/stores/<%=store.id%>"><%=store.store_name%></a></li>
+  <li><%store.store_url%></li>
+  <%end%>
+<br><br>
+<a href='/vouchers'>Back to saved vouchers</a>

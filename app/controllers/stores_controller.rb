@@ -1,8 +1,8 @@
-class StoreController < ApplicationController 
+class StoresController < ApplicationController 
 
   get '/stores' do 
-    @store = Store.all
-    erb :'/store/index'
+    @stores = Store.all
+    erb :'/stores/index'
   end 
 
   get '/store/new' do 
