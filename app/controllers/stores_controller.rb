@@ -18,4 +18,10 @@ class StoresController < ApplicationController
     erb :'/stores/show'
   end 
 
+  delete '/stores/:id/delete' do 
+    @store = Store.find(params[:id]) 
+    @store.delete
+    redirect '/stores'
+  end
+
 end 

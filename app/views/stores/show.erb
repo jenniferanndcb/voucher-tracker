@@ -1,4 +1,5 @@
 <h3><%=@store.store_name%></h3>
+<h4><%=@store.store_url%></h4>
 
 <h4>Available voucher codes for this store:</h4>
 <br><br>
@@ -6,11 +7,22 @@
   <li>Voucher code: <strong><%=voucher.code%></strong></li>
   <li>Savings: <%=voucher.savings%><%=voucher.options%></li>
   <li>Expiry date: <%=voucher.exp_date%><li>
+  <br>
+  <form action='/vouchers' method='post'>
+    <input type='submit' value='Save'>
+  </form> 
+  <br><br>
   <%end%>
 <br>
- <form action='/vouchers' method='post'>
- <input type='submit' value='Save'>
- </form> 
+
+
+ 
+
+ <form action='/stores/<%=@store.id%>/delete' method='post'> 
+  <input type='hidden' name='_method' value='delete'>
+  <input type='hidden' name='id' value='<%=@store.id%>'>
+  <input type='submit' value='Delete'> 
+</form>
 
 
   
