@@ -1,5 +1,5 @@
 class Voucher < ActiveRecord::Base 
-  belongs_to :users 
-  belongs_to :stores
+  belongs_to :user 
+  belongs_to :store
 
 end 
