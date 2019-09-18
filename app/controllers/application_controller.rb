@@ -35,9 +35,6 @@ class ApplicationController < Sinatra::Base
       end 
     end
 
-    def store 
-      
-    end 
 
     def logout! 
       session.clear 

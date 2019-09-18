@@ -9,6 +9,8 @@ Expiry Date: <%=@voucher.exp_date%>
 <br><br>
 <a href='/vouchers/<%=@voucher.id%>/edit'>Edit</a>
 <br><br>
+<a href='/vouchers'>Back to saved vouchers</a>
+<br><br>
 <form action='/vouchers/<%=@voucher.id%>/delete' method='post'> 
   <input type='hidden' name='_method' value='delete'>
   <input type='hidden' name='id' value='<%=@voucher.id%>'>

@@ -2,11 +2,9 @@
 <h3>Here are all your saved discount voucher codes:</h3>
 <br>
 
-<%#iterate stores that the user has vouchers for with link%>
-  <%#list voucher details - savings, options, code, exp_date%>
 
 <%@user.vouchers.each do |voucher|%>
-  <li><h3><a href = "/vouchers/<%=voucher.id%>"><%=voucher.store.store_name%></a></h3>
+    <li><h3><a href="/vouchers/<%=voucher.id%>"><%=voucher.store.store_name%></a></h3>
   <li>Voucher Code: <strong><%=voucher.code%></li></strong>
   <li>Savings: <%=voucher.savings%> <%=voucher.options%></li>
   <li>Expiry Date: <%=voucher.exp_date%>

@@ -43,7 +43,6 @@ class VouchersController < ApplicationController
 
   patch '/vouchers/:id/edit' do 
     @voucher = Voucher.find(params[:id])
-    @voucher.store_name = params[:store_name]
     @voucher.code = params[:code]
     @voucher.savings = params[:savings]
     @voucher.exp_date = params[:exp_date]

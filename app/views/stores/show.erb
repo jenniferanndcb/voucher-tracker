@@ -8,21 +8,12 @@
   <li>Savings: <%=voucher.savings%><%=voucher.options%></li>
   <li>Expiry date: <%=voucher.exp_date%><li>
   <br>
-  <form action='/vouchers' method='post'>
-    <input type='submit' value='Save'>
-  </form> 
-  <br><br>
-  <%end%>
+
+  
+
+<%end%>
 <br>
 
-
- 
-
- <form action='/stores/<%=@store.id%>/delete' method='post'> 
-  <input type='hidden' name='_method' value='delete'>
-  <input type='hidden' name='id' value='<%=@store.id%>'>
-  <input type='submit' value='Delete'> 
-</form>
 
 
   
