@@ -1,10 +1,8 @@
 class VouchersController < ApplicationController 
 
-  get '/vouchers' do 
+  get '/vouchers' do  
     @user = User.find(session[:user_id])
-
     erb :'vouchers/index'
-    
   end 
 
   get '/vouchers/new' do 

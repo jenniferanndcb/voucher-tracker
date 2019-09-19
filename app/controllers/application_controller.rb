@@ -1,5 +1,6 @@
 require './config/environment'
 
+
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -7,6 +8,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions 
     set :session_secret, "secret" 
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -27,14 +29,14 @@ class ApplicationController < Sinatra::Base
     end 
 
     def login(email,password)
-    user = User.find_by(:email => email)
+      user = User.find_by(:email => email)
       if user && user.authenticate(password)
         session[:user_id] = user.id 
       else 
+        flash[:notice] = "Invalid login"
         redirect '/login'
       end 
-    end
-
+    end 
 
     def logout! 
       session.clear 

@@ -1,5 +1,8 @@
 <h1>Log In</h1>
 <br><br>
+<%if flash[:notice]%>
+  <p><%=flash[:notice]%></p>
+  <%end%>
 <form action='/login' method='post'>
 
 <label for='email_address'>Your email address:</label>
